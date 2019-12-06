@@ -26,7 +26,7 @@ spaceship_java() {
   # Check if maven or gradle project
   [[ -f pom.xml || -f build.gradle || -f build.gradle.kts ]] || return
 
-  local java_version=$(java -version 2>&1 | grep '^java version ' | awk -F '"' '{print $2}')
+  local java_version=$(java -version 2>&1 | grep 'version ' | awk -F '"' '{print $2}')
 
   spaceship::section \
     "$SPACESHIP_JAVA_COLOR" \
